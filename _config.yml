@@ -40,7 +40,5 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# plugins:
-#   - jekyll-remote-theme
-
-# remote_theme: ngzhio/jekyll-theme-hamilton
+# Google Analytics
+google_analytics: G-YZ9QEQHP1F
