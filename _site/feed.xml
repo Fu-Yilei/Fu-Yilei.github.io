@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-02T11:56:12-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yilei Fu’s Blog</title><subtitle>Yilei Fu is a postdoc at Baylor College of Medicine, Human Genome Sequencing Center focus on cancer genomics, long-read technology and genome-scale algorithms. </subtitle><entry><title type="html">About Yilei Fu</title><link href="http://localhost:4000/introduction/2023/12/01/different-human-region-gap-penalties.html" rel="alternate" type="text/html" title="About Yilei Fu" /><published>2023-12-01T02:11:03-06:00</published><updated>2023-12-01T02:11:03-06:00</updated><id>http://localhost:4000/introduction/2023/12/01/different-human-region-gap-penalties</id><content type="html" xml:base="http://localhost:4000/introduction/2023/12/01/different-human-region-gap-penalties.html">&lt;p&gt;See &lt;a href=&quot;/about&quot;&gt;About Yilei Fu&lt;/a&gt; about myself.&lt;/p&gt;</content><author><name></name></author><category term="Introduction" /><summary type="html">See About Yilei Fu about myself.</summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-02T14:49:14-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yilei Fu’s Blog</title><subtitle>Yilei Fu is a postdoc at Baylor College of Medicine, Human Genome Sequencing Center focus on cancer genomics, long-read technology and genome-scale algorithms. </subtitle><entry><title type="html">Yilei’s Ph.D. Defense Slides</title><link href="http://localhost:4000/others/2023/12/02/yilei-defense-slides.html" rel="alternate" type="text/html" title="Yilei’s Ph.D. Defense Slides" /><published>2023-12-02T00:00:00-06:00</published><updated>2023-12-02T00:00:00-06:00</updated><id>http://localhost:4000/others/2023/12/02/yilei-defense-slides</id><content type="html" xml:base="http://localhost:4000/others/2023/12/02/yilei-defense-slides.html">&lt;p&gt;&lt;a href=&quot;/assets/YileiFuPh.D.ThesisDefense.pdf&quot;&gt;Slides for my Ph.D. defense.&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- 
+&lt;object data=&quot;http://localhost:4000/_files/Yilei Fu Ph.D. Thesis Defense.pdf&quot; type=&quot;application/pdf&quot; width=&quot;3000px&quot; height=&quot;3000pxpx&quot;&gt;
+    &lt;embed src=&quot;http://localhost:4000/_files/Yilei Fu Ph.D. Thesis Defense.pdf&quot;&gt;&lt;/embed&gt;
+&lt;/object&gt; --&gt;</content><author><name></name></author><category term="Others" /><summary type="html">Slides for my Ph.D. defense.</summary></entry><entry><title type="html">诗2首</title><link href="http://localhost:4000/others/2023/12/02/%E8%AF%972%E9%A6%96-copy.html" rel="alternate" type="text/html" title="诗2首" /><published>2023-12-02T00:00:00-06:00</published><updated>2023-12-02T00:00:00-06:00</updated><id>http://localhost:4000/others/2023/12/02/%E8%AF%972%E9%A6%96%20copy</id><content type="html" xml:base="http://localhost:4000/others/2023/12/02/%E8%AF%972%E9%A6%96-copy.html">&lt;p&gt;2 poets I recently wrote (in Chinese):&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;《夜》&lt;/strong&gt;&lt;br /&gt;
+沙发是精神的邮轮&lt;br /&gt;
+台灯是白昼的月亮&lt;br /&gt;
+雨水 洗刷意志&lt;br /&gt;
+太阳 组织睡眠&lt;/p&gt;
+
+&lt;p&gt;窗外飘进&lt;br /&gt;
+无奈地呼喊&lt;br /&gt;
+二手烟听见&lt;br /&gt;
+生命的碎裂&lt;br /&gt;
+警笛声想起&lt;br /&gt;
+是太阳 在阻止睡眠&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;《生活》&lt;/strong&gt;&lt;br /&gt;
+锅盖上的水滴落下&lt;br /&gt;
+孤独的人走进大海&lt;br /&gt;
+生活的苦&lt;br /&gt;
+是翻滚的腐竹&lt;/p&gt;
+
+&lt;p&gt;初代的苹果铅笔&lt;br /&gt;
+失去了平板电脑&lt;br /&gt;
+就像墙角的落地灯&lt;br /&gt;
+失去的照明的方向&lt;/p&gt;</content><author><name></name></author><category term="Others" /><summary type="html">2 poets I recently wrote (in Chinese):</summary></entry><entry><title type="html">About Yilei Fu</title><link href="http://localhost:4000/introductions/2023/12/01/about-yilei-fu.html" rel="alternate" type="text/html" title="About Yilei Fu" /><published>2023-12-01T00:00:00-06:00</published><updated>2023-12-01T00:00:00-06:00</updated><id>http://localhost:4000/introductions/2023/12/01/about-yilei-fu</id><content type="html" xml:base="http://localhost:4000/introductions/2023/12/01/about-yilei-fu.html">&lt;p&gt;Please read &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt; for more about me :D&lt;/p&gt;</content><author><name></name></author><category term="Introductions" /><summary type="html">Please read About for more about me :D</summary></entry></feed>

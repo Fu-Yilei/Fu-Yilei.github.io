@@ -7,6 +7,7 @@ My name is Yile Fu (付译磊), a postdoctoral fellow at [Baylor College of Medi
 
 I graduated from [Habin Institute of Technology](http://en.hit.edu.cn/) in 2019, with a B.S. in Computer Science and Technology. Under the supervision of [Dr. Todd Treangen](https://www.treangenlab.com/) and [Dr. Fritz Sedlazeck](https://fritzsedlazeck.github.io/), I graduated from [Rice University, Computer Science Department](https://csweb.rice.edu/) in November 2023. 
 
+At the time I am writing this post, I am sitting at my small apartment in Houston Texas, waiting my father and my cousin's visit tomorrow for my Ph.D. commencement ceremony. 
 ## Selected Publications
 **Fu, Y.**, Aganezov, S., Mahmoud, M., Beaulaurier, J., Juul, S., Treangen, T. J., & Sedlazeck, F. J. (2023). MethPhaser: methylation-based haplotype phasing of human genomes. Cold Spring Harbor Laboratory. [https://doi.org/10.1101/2023.05.12.540573](https://doi.org/10.1101/2023.05.12.540573)
 
@@ -40,3 +41,6 @@ Lou, E. G., **Fu, Y.**, Wang, Q., Treangen, T. J., & Stadler, L. B. (2023). Sens
 - deGSM: memory scalable construction of large scale de Bruijn Graph. IEEE/ACM transactions on computational biology and bioinformatics, 2019.
 - Fast variation-aware read alignment with deBGA-VARA. In 2018 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2018
 - Acanthopanax senticosus reduces brain injury in mice exposed to low linear energy transfer radiation. Biomedicine & Pharmacotherapy, 2018
+
+
+
