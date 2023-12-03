@@ -3,7 +3,7 @@ layout: page
 title: About Yilei Fu
 permalink: /about/
 ---
-My name is Yile Fu (付译磊), a postdoctoral fellow at [Baylor College of Medicine, Human Genome Sequencing Center](https://www.hgsc.bcm.edu/). My research interests include cancer genomics, long-read genome-scale algorithms, epigenetic signal analysis and metagenomics.  
+My name is Yilei Fu (付译磊), a postdoctoral fellow at [Baylor College of Medicine, Human Genome Sequencing Center](https://www.hgsc.bcm.edu/). My research interests include cancer genomics, long-read genome-scale algorithms, epigenetic signal analysis and metagenomics.  
 
 I graduated from [Habin Institute of Technology](http://en.hit.edu.cn/) in 2019, with a B.S. in Computer Science and Technology. Under the supervision of [Dr. Todd Treangen](https://www.treangenlab.com/) and [Dr. Fritz Sedlazeck](https://fritzsedlazeck.github.io/), I graduated from [Rice University, Computer Science Department](https://csweb.rice.edu/) in November 2023. 
 
