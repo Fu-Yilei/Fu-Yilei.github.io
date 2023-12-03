@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Utlizing different gap penalties for different human genomic regions | Yilei Fu’s Blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Utlizing different gap penalties for different human genomic regions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In next several blogs, I will write things about my Ph.D. work. The first topic today is highly related to our work Vulcan, which utlizes 2 different kinds of gap penalties for better long-read alignments. Different regions in human genome may have different mutation rates, here are some examples: Housekeeping genes usually have low mutaion rates, which means they are evolving slower than the others. Genes involved in immune responses, tend have higher mutation rates. In the population scale, there are also genes divergent among people such as LPA genes and Cyp2d6 genes." />
+<meta property="og:description" content="In next several blogs, I will write things about my Ph.D. work. The first topic today is highly related to our work Vulcan, which utlizes 2 different kinds of gap penalties for better long-read alignments. Different regions in human genome may have different mutation rates, here are some examples: Housekeeping genes usually have low mutaion rates, which means they are evolving slower than the others. Genes involved in immune responses, tend have higher mutation rates. In the population scale, there are also genes divergent among people such as LPA genes and Cyp2d6 genes." />
+<link rel="canonical" href="http://localhost:4000/read/alignment/2023/12/01/different-human-region-gap-penalties-copy.html" />
+<meta property="og:url" content="http://localhost:4000/read/alignment/2023/12/01/different-human-region-gap-penalties-copy.html" />
+<meta property="og:site_name" content="Yilei Fu’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-01T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Utlizing different gap penalties for different human genomic regions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-01T00:00:00-06:00","datePublished":"2023-12-01T00:00:00-06:00","description":"In next several blogs, I will write things about my Ph.D. work. The first topic today is highly related to our work Vulcan, which utlizes 2 different kinds of gap penalties for better long-read alignments. Different regions in human genome may have different mutation rates, here are some examples: Housekeeping genes usually have low mutaion rates, which means they are evolving slower than the others. Genes involved in immune responses, tend have higher mutation rates. In the population scale, there are also genes divergent among people such as LPA genes and Cyp2d6 genes.","headline":"Utlizing different gap penalties for different human genomic regions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/read/alignment/2023/12/01/different-human-region-gap-penalties-copy.html"},"url":"http://localhost:4000/read/alignment/2023/12/01/different-human-region-gap-penalties-copy.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Yilei Fu&apos;s Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Yilei Fu&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About Yilei Fu</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Utlizing different gap penalties for different human genomic regions</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-12-01T00:00:00-06:00" itemprop="datePublished">Dec 1, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In next several blogs, I will write things about my Ph.D. work. The first topic today is highly related to our work <a href="https://academic.oup.com/gigascience/article/10/9/giab063/6375129">Vulcan</a>, which utlizes 2 different kinds of gap penalties for better long-read alignments.<br />
+Different regions in human genome may have different mutation rates, here are some examples:</p>
+<ul>
+  <li>Housekeeping genes usually have low mutaion rates, which means they are <a href="https://pubmed.ncbi.nlm.nih.gov/14595094/">evolving slower than the others</a>.</li>
+  <li>Genes involved in immune responses, tend have <a href="https://www.nature.com/articles/pr2004101">higher mutation rates</a>.</li>
+  <li>In the population scale, there are also genes divergent among people such as <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6947201/">LPA genes</a> and <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1874287/">Cyp2d6 genes</a>.</li>
+</ul>
+
+<p>We all know that long-read sequencers suffers from sequening errors, and those sequencing errors may have different effects on alignment accuracy when we are trying to align reads to these differnet regions. In this case, using the same gap penalty maybe not sufficient for all those different regions. For example, in this case, 2 different gap penalties made different choices in <em>EEIG2</em> gene. 
+<img src="/assets/vulcan_eeig2.png" alt="image" /> 
+Gap penalties mainly alter the pairwise alignment behaviors in the extension stage during long-read alignment process. The state-of-the-art long-read aligners use either affine gap penalty (<a href="https://github.com/lh3/minimap2">minimap2</a>) or convex gap penalty (<a href="https://github.com/philres/ngmlr">NGMLR</a>). <br />
+What is the difference between these two penalties?</p>
+<ul>
+  <li>Affine gap penalty calculates alignment scores as $G(i) = g_o + g_E * i$</li>
+  <li>Convex gap penalty calculates alignment scores as $G(i)=\left{\begin{matrix}g_o,i=0
+\ 
+G(i-1)+min\left{\begin{matrix}g_M
+\ 
+g_E+g_D*(i-1)
+\end{matrix},i&gt;0\right.
+\end{matrix}\right.$</li>
+</ul>
+
+<p>In here, $g_o$ : gap opening penalty; $g_E$ : gap extension penalty; $g_M$ : gap matching score; $i$ : current length of the gap; $g_D$ : gap decay parameter between 0 and 1; $m$ and $n$ are the length of two sequences.  We can clearly see that the time complexity of affine gap penalty is $O(mn)$ while the one for convex gap penalty is $O(mnlog(m+n))$ since it need to remember the scores from previous gaps.<br />
+Due to the gap decay parameter, convex gap penalty funcitons always favor larger gaps than smaller ones. In <a href="https://doi.org/10.1038%2Fs41592-018-0001-7">NGMLR paper</a> they claims this kind gap penalty helps long-read aligner to become more robost against sequencing errors. However, is this entirely true? We think when we are aligning reads to the regions where the sequencing errors are dominant “variants” against the reference, affine gap penalty can actually work better, and in these regions the edit distances between reads and the reference are usually low since there are fewer variations. Based on that, we can filter the read alignment that have high edit distance from minimap2 and put those into NGMLR for re-alignment.<br />
+Based on this motivation, we developed <a href="https://academic.oup.com/gigascience/article/10/9/giab063/6375129">Vulcan</a>: 
+<img src="/assets/vulcan_algo.png" alt="image" /></p>
+
+  </div><a class="u-url" href="/read/alignment/2023/12/01/different-human-region-gap-penalties-copy.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Yilei Fu&#39;s Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Yilei Fu&#39;s Blog</li><li><a class="u-email" href="mailto:fuyilei96 AT outlook.com">fuyilei96 AT outlook.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Fu-Yilei"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Fu-Yilei</span></a></li><li><a href="https://www.twitter.com/fuyilei96"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">fuyilei96</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Yilei Fu is a postdoc at Baylor College of Medicine, Human Genome Sequencing Center focus on cancer genomics, long-read technology and genome-scale algorithms. </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
