@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Thoughts on Structural Variation Detections on Metagenomes | Yilei Fu’s Blog</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Thoughts on Structural Variation Detections on Metagenomes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We are now in the golden age of identifying genomic variation in population-scale studies. To date, much attention has focused on analyzing structural variation in primate genomes, specifically the human genome, given the direct relevance to human health. However, recent studies have shown that structural variations (SVs) are also common in microbial communities inhabiting human hosts and can affect host health. In fact, since the first bacterial genome Haemophilus Influenza was sequenced in 1995, genome-scale structural variations in bacterial chromosomes have been investigated, including inversions, duplications, rearrangements, and deletions. SVs in bacterial genomes have been repeatedly shown to not only have a major impact on function, but also linked to strong clinical relevance such as antimicrobial resistance, heteroresistance, and virulence. Given these findings, metagenomic studies have interrogated SVs within human host associated microbiomes." />
+<meta property="og:description" content="We are now in the golden age of identifying genomic variation in population-scale studies. To date, much attention has focused on analyzing structural variation in primate genomes, specifically the human genome, given the direct relevance to human health. However, recent studies have shown that structural variations (SVs) are also common in microbial communities inhabiting human hosts and can affect host health. In fact, since the first bacterial genome Haemophilus Influenza was sequenced in 1995, genome-scale structural variations in bacterial chromosomes have been investigated, including inversions, duplications, rearrangements, and deletions. SVs in bacterial genomes have been repeatedly shown to not only have a major impact on function, but also linked to strong clinical relevance such as antimicrobial resistance, heteroresistance, and virulence. Given these findings, metagenomic studies have interrogated SVs within human host associated microbiomes." />
+<link rel="canonical" href="http://localhost:4000/others/2023/12/16/sv-in-metagenomes.html" />
+<meta property="og:url" content="http://localhost:4000/others/2023/12/16/sv-in-metagenomes.html" />
+<meta property="og:site_name" content="Yilei Fu’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-16T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Thoughts on Structural Variation Detections on Metagenomes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-16T00:00:00-06:00","datePublished":"2023-12-16T00:00:00-06:00","description":"We are now in the golden age of identifying genomic variation in population-scale studies. To date, much attention has focused on analyzing structural variation in primate genomes, specifically the human genome, given the direct relevance to human health. However, recent studies have shown that structural variations (SVs) are also common in microbial communities inhabiting human hosts and can affect host health. In fact, since the first bacterial genome Haemophilus Influenza was sequenced in 1995, genome-scale structural variations in bacterial chromosomes have been investigated, including inversions, duplications, rearrangements, and deletions. SVs in bacterial genomes have been repeatedly shown to not only have a major impact on function, but also linked to strong clinical relevance such as antimicrobial resistance, heteroresistance, and virulence. Given these findings, metagenomic studies have interrogated SVs within human host associated microbiomes.","headline":"Thoughts on Structural Variation Detections on Metagenomes","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/others/2023/12/16/sv-in-metagenomes.html"},"url":"http://localhost:4000/others/2023/12/16/sv-in-metagenomes.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Yilei Fu&apos;s Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Yilei Fu&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About Yilei Fu</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Thoughts on Structural Variation Detections on Metagenomes</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-12-16T00:00:00-06:00" itemprop="datePublished">Dec 16, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>We are now in the golden age of identifying genomic variation in population-scale studies. To date, much attention has focused on analyzing structural variation in primate genomes, specifically the human genome, given the direct relevance to human health. However, recent studies have shown that structural variations (SVs) are also common in microbial communities inhabiting human hosts and can affect host health. In fact, since the first bacterial genome Haemophilus Influenza was sequenced in 1995, genome-scale structural variations in bacterial chromosomes have been investigated, including inversions, duplications, rearrangements, and deletions. SVs in bacterial genomes have been repeatedly shown to not only have a major impact on function, but also linked to strong clinical relevance such as antimicrobial resistance, heteroresistance, and virulence. Given these findings, metagenomic studies have interrogated SVs within human host associated microbiomes.</p>
+
+<p>Even very recently, structural variations in microbiomes have been linked to impacting human host health directly. In spite of these intriguing findings, SVs have not yet been comprehensively surveyed due to low resolution that short reads provide in the context of microbial communities. Also, the computational challenges in metagenomics like alignment and assembly errors require expert users to stay up to date with developments and best practice approaches. Although several methods have been proposed for SV detection in microbial genomes, these methods either are unable to detect all SV types or are limited with respect to the length of SVs they can detect. The arrival of the long read data era in metagenome sequencing provides enhanced resolution of SVs than previous short read data.<br />
+Here I want to list a table that include the major SV types that happens in bacteria and their machanisms, potential consequences and examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>SV type</th>
+      <th>Biological mechanisms</th>
+      <th>Potential consequences</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>INS</strong></td>
+      <td>Horizontal gene transfer (HGT)</td>
+      <td>antimicrobial resistance</td>
+      <td>Extensive horizontal gene transfer in cheese-associated bacteria</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Repeat expansion</td>
+      <td>virulence</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Copy and paste </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>DUP</strong></td>
+      <td>Tandem repeat: replication slippage and recombination</td>
+      <td>heteroresistance in Salmonella enterica</td>
+      <td>Tandem repeat (duplication): from several bps up to more than 200kbps</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>tRNA</td>
+      <td>methicillin resistance in Methicillin-Resistant Staphylococcus aureus</td>
+      <td>Nearly 300Kbp duplication of tRNA</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Segmental duplications: not relevant to the function of the duplicated sequence but common when homologous recombination happens</td>
+      <td>Amplification of β-lactamase gene can lead to de novo carbapenem resistance</td>
+      <td>E.coli DH10B: 113,260bp tandem duplication</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>Segmental duplications: 1kbps upto 100-200 kbps but shorter than whole-genome duplication</td>
+    </tr>
+    <tr>
+      <td><strong>DEL</strong></td>
+      <td>Repeat contraction</td>
+      <td>Gene loss causes loss of functions or other functional consequences</td>
+      <td>several base pairs to several Mbps</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Reductive genome evolution</td>
+      <td> </td>
+      <td>R. rickettsii Iowa and R. rickettsii Sheila Smith</td>
+    </tr>
+    <tr>
+      <td><strong>INV</strong></td>
+      <td>homologous recombination, </td>
+      <td>antibiotic resistance gene</td>
+      <td>X-alignments between species</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>can be mediated by tyrosine site-specific recombinases</td>
+      <td>virulence gene</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>BND/TRA</strong></td>
+      <td>Recombinations</td>
+      <td>change gene regulation</td>
+      <td>Depends on other SV events</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>By-product of other SV events</td>
+      <td>virulence</td>
+      <td>Mobile genetic elements:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Transduction</td>
+      <td> </td>
+      <td>Phage: transduction</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Conjugation</td>
+      <td> </td>
+      <td>Naked DNA: transformation</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Transformation</td>
+      <td> </td>
+      <td>Plasmid, chromosome: conjugation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The current methods for detection SVs in metagenomics can be divided by sequencing technologies. Short read based methods usually use k-mer based or <em>de bruijn</em> graph-based approaches due to the limitation of the read lengths. On the other hand, long-read based methods can levearge the larger read length for better alignment or overlap graph building. Here I am attaching a figure that shows the high-level view of reference-based and assembled based methods for detection SVs in single-isolate bacterial genomes and metagenomes.
+<img src="/assets/metasv_review_methods.png" alt="image" /> 
+<strong>a:</strong> illustration of referenced-based SV detection methods among metagenomic sample and isolate genomes. For metagenomic samples given a read set, select proper reference genomes based on reads, then further perform split-read alignment on read set and references. The SV analysis step between reads and references is the same as SV calling on isolate genomes. <strong>b:</strong> Long read assembly-based methods can utilize multiple sequence alignment algorithms or graph-based algorithms onto contigs or assembly graphs. <strong>c:</strong> Short read de novo assembly usually includes k-mer counting. By generating de Bruijn graphs based on k-mers, graph-based analysis can indicate potential SV existence. <strong>d:</strong> A scaffold graph or variation graph can be inferred from either long read assembly graphs or short read assembly graphs.</p>
+
+<p>The methods includes these approaches are shown in the following chart.
+<img src="/assets/metasv_review_methods_chart.png" alt="image" /></p>
+
+<p>Till now, most of the SV detection methods in microbiomes are short-read based. However, the lack of long-range positional information brings the apparent need for long reads. Long reads can carry the ability to detect complex SVs and large size SV detection. For example, large tandem repeats extensively exist in e.coli, and those repeats can significantly improve the detection of those with the introduction of long reads. Validation is also a vital step of method detection, especially the methods that aim to solve microbiomes’ problems, given the uncertainty. Similar to the metagenome classification problem, a benchmarking dataset provides significant help for scientists to validate their methods. However, such datasets do not exist in SV detection in microbiomes. Thus the effectiveness of methods is hard to determine.</p>
+
+  </div><a class="u-url" href="/others/2023/12/16/sv-in-metagenomes.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Yilei Fu&#39;s Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Yilei Fu&#39;s Blog</li><li><a class="u-email" href="mailto:fuyilei96 AT outlook.com">fuyilei96 AT outlook.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Fu-Yilei"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Fu-Yilei</span></a></li><li><a href="https://www.twitter.com/fuyilei96"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">fuyilei96</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Yilei Fu is a postdoc at Baylor College of Medicine, Human Genome Sequencing Center focus on cancer genomics, long-read technology and genome-scale algorithms. </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  

@@ -2,7 +2,7 @@
 layout: post
 title:  "Utlizing different gap penalties for different human genomic regions"
 date:   2023-12-02 00:00:00 -0600
-categories: Read Alignment
+categories: Bioinformatics
 # summary: 2 gap penalties for better long-read alignment
 ---
 
