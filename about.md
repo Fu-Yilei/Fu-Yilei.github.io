@@ -29,11 +29,13 @@ Lou, E. G., **Fu, Y.**, Wang, Q., Treangen, T. J., & Stadler, L. B. (2023). Sens
 **Data Analyst | 2015.1 | Institute of Extreme Environmental Nutrition and Protection at HIT**
 - Statistical analysis of experimental data of the paper Acanthopanax senticosus reduces brain injury in mice exposed to low linear energy transfer radiation.
 
+## Talks
+- [Talk about MethPhaser at NCM2023](https://nanoporetech.com/resource-centre/ncm-2023-houston-methphaser-methylation-based-haplotype-phasing-human-genomes)
 
 ## Other Publications
 - CRISPR/Cas9 editing induces unintended large gene modifications in HSPCs from patients with sickle cell disease. Science Advances 2022.
 - KOMB: K-core based de novo characterization of copy number variation in microbiomes.  Computational and Structural Biotechnology Journal, 2022
-- The World Ahead: The impact of long-read sequencing on metagenomics. In prep
+- The World Ahead: The impact of long-read sequencing on metagenomics. Accepted by Nature Method
 - Olivar: fully automated and variant aware primer design for multiplex tiled amplicon sequencing of pathogen genomes. In prep. 
 - The third international hackathon for applying insights into large-scale genomic composition to use cases in a wide range of organisms. F1000Research, 2022
 - Methods developed during the first National Center for Biotechnology Information Structural Variation Codeathon at Baylor College of Medicine. F1000Research, 2020
