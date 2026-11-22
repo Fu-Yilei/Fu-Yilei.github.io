@@ -1,50 +1,42 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Yilei Fu's Blog
-# email: fuyilei96 AT outlook.com
-# author:
-# name: Yilei Fu
-email: fuyilei96 AT outlook.com
-description: >- # this means to ignore newlines until "baseurl:"
- Yilei Fu is a postdoc at Baylor College of Medicine, Human Genome Sequencing Center focus on cancer genomics, long-read technology and genome-scale algorithms. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: fuyilei96
-github_username:  Fu-Yilei
-social_links:
-- { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=RUibzJsAAAAJ" }  
-# Build settings
+title: Yilei Fu
+tagline: Computational genomics & long-read sequencing
+description: >-
+  Yilei Fu is a computational genomics researcher at Baylor College of Medicine,
+  developing methods to connect genetic variation, DNA methylation, and cellular
+  context with long-read sequencing.
+url: "https://fu-yilei.github.io"
+baseurl: ""
+lang: en
+timezone: America/Chicago
+author: Yilei Fu
+github_username: Fu-Yilei
+scholar_url: "https://scholar.google.com/citations?user=RUibzJsAAAAJ"
+orcid_url: "https://orcid.org/0000-0002-7721-7027"
+repository: Fu-Yilei/Fu-Yilei.github.io
 markdown: kramdown
-theme: minima
-# plugins:
-#   - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-minima:
-  skin: solarized-light
-  # skin: classic
-# Google Analytics
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      section: notes
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - docs
+  - scripts
+  - vendor
+  - node_modules
+  - .bundle
+# Existing analytics property; loaded only for production builds.
 google_analytics: G-F7KFFKTK57

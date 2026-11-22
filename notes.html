@@ -1,0 +1,11 @@
+---
+layout: default
+title: Notes
+section: notes
+permalink: /notes/
+description: Research notes, talks, and personal writing by Yilei Fu. The original blog archive, beginning in 2023.
+---
+<div class="container page-content">
+  <header class="page-heading"><p class="eyebrow">The notebook</p><h1>Notes & writing</h1><p class="page-intro">Research notes, talks, and occasional personal writing. These posts preserve the original blog, which I started around the time of my Ph.D. graduation in 2023.</p><div class="publications-tools"><a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a></div></header>
+  <div class="notes-list">{% for post in site.posts %}<article class="note-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><div><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><span class="note-category">{{ post.categories | join: ' / ' }}</span></div></article>{% endfor %}</div>
+</div>

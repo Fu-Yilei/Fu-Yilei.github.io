@@ -1,0 +1,11 @@
+<article class="publication" id="{{ include.pub.id }}" data-publication data-status="{{ include.pub.status }}" data-year="{{ include.pub.year }}" data-search="{{ include.pub.title | escape }} {{ include.pub.authors | join: ' ' | escape }} {{ include.pub.venue | escape }} {{ include.pub.topic | escape }} {{ include.pub.id }}">
+  <div class="publication-year">{{ include.pub.year }}</div>
+  <div class="publication-main">
+    <div class="publication-meta"><span>{{ include.pub.venue }}</span>{% if include.pub.status == 'preprint' %}<span class="tag tag-preprint">Preprint</span>{% endif %}</div>
+    <h3><a href="{{ include.pub.url }}">{{ include.pub.title }}</a></h3>
+    <p class="publication-authors">{{ include.pub.authors_short }}</p>
+    {% if include.compact != true and include.pub.summary %}<p class="publication-summary">{{ include.pub.summary }}</p>{% endif %}
+    {% if include.pub.note %}<p class="publication-note">{{ include.pub.note }}</p>{% endif %}
+    <div class="publication-links"><a href="{{ include.pub.url }}">{% if include.pub.status == 'preprint' %}Read preprint{% else %}Read paper{% endif %}</a>{% if include.pub.code %}<a href="{{ include.pub.code }}">Code</a>{% endif %}<span class="publication-topic">{{ include.pub.topic }}</span></div>
+  </div>
+</article>
