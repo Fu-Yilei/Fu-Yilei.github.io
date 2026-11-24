@@ -27,6 +27,11 @@ description: Yilei Fu is a computational genomics researcher at Baylor College o
   </section>
   <section class="home-section" aria-labelledby="notes-title">
     <div class="section-heading-inline"><h2 id="notes-title">Notes & talks</h2><a href="{{ '/notes/' | relative_url }}">All notes</a></div>
-    <ul class="recent-notes">{% assign substantive_posts = site.posts | where_exp: 'post', "post.title != 'About Yilei Fu'" %}{% for post in substantive_posts limit:3 %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %Y' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
+    <ul class="recent-notes">
+      <li><time datetime="2026-11-19">Nov 2026</time><a href="https://www.youtube.com/watch?v=77VDKtSW33w">TBAS talk at SVAR26: cost-efficient long-read trio sequencing</a></li>
+      <li><time datetime="2025-06-30">Jun 2025</time><a href="https://www.youtube.com/watch?v=Fh3-dmZdvFU">Computational analysis of DNA methylation from long-read sequencing · Labroots recording</a></li>
+      <li><time datetime="2024-06-26">Jun 2024</time><a href="https://www.youtube.com/watch?v=YvzpYYDCFrk&amp;t=6s">MethPhase: methylation-based haplotype phasing · Labroots recording</a></li>
+      {% assign substantive_posts = site.posts | where_exp: 'post', "post.title != 'About Yilei Fu'" %}{% for post in substantive_posts limit:3 %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %Y' }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}
+    </ul>
   </section>
 </div>
