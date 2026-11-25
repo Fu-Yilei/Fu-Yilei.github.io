@@ -1,11 +1,17 @@
-<article class="publication" id="{{ include.pub.id }}" data-publication data-status="{{ include.pub.status }}" data-year="{{ include.pub.year }}" data-search="{{ include.pub.title | escape }} {{ include.pub.authors | join: ' ' | escape }} {{ include.pub.venue | escape }} {{ include.pub.topic | escape }} {{ include.pub.id }}">
-  <div class="publication-year">{{ include.pub.year }}</div>
-  <div class="publication-main">
-    <div class="publication-meta"><span>{{ include.pub.venue }}</span>{% if include.pub.status == 'preprint' %}<span class="tag tag-preprint">Preprint</span>{% endif %}</div>
+<article class="publication" id="{{ include.pub.id }}" data-publication data-type="{{ include.pub.status }}" data-search="{{ include.pub.title | escape }} {{ include.pub.authors | join: ' ' | escape }} {{ include.pub.year }} {{ include.pub.venue | escape }} {{ include.pub.topic | escape }} {{ include.pub.summary | escape }} {{ include.pub.id }} {{ include.pub.doi }}">
+  <div>
     <h3><a href="{{ include.pub.url }}">{{ include.pub.title }}</a></h3>
-    <p class="publication-authors">{{ include.pub.authors_short }}</p>
-    {% if include.compact != true and include.pub.summary %}<p class="publication-summary">{{ include.pub.summary }}</p>{% endif %}
-    {% if include.pub.note %}<p class="publication-note">{{ include.pub.note }}</p>{% endif %}
-    <div class="publication-links"><a href="{{ include.pub.url }}">{% if include.pub.status == 'preprint' %}Read preprint{% else %}Read paper{% endif %}</a>{% if include.pub.code %}<a href="{{ include.pub.code }}">Code</a>{% endif %}<span class="publication-topic">{{ include.pub.topic }}</span></div>
+    <p class="pub-authors">{{ include.pub.authors_short }}</p>
+    {% if include.compact != true and include.pub.authors.size > 4 %}<details class="pub-authors-full"><summary>Full author list</summary><p>{{ include.pub.authors | join: ', ' | escape }}</p></details>{% endif %}
+    <p class="pub-venue"><strong>{{ include.pub.venue }}</strong>, {{ include.pub.year }}{% if include.pub.status == 'preprint' %}<span class="tag">Preprint</span>{% endif %}</p>
+    {% if include.compact != true and include.pub.note %}<p class="pub-summary">{{ include.pub.note }}</p>{% endif %}
+    <div class="pub-actions">
+      <a href="{{ include.pub.url }}">{% if include.pub.status == 'preprint' %}Read preprint{% else %}Read paper{% endif %}</a>
+      {% if include.pub.code %}<a href="{{ include.pub.code }}">Code</a>{% endif %}
+      {% if include.compact != true %}
+      {% capture citation %}{{ include.pub.authors | join: ', ' }} ({{ include.pub.year }}). {{ include.pub.title }}. {{ include.pub.venue }}. {{ include.pub.url }}{% endcapture %}
+      <button type="button" data-copy-citation="{{ citation | strip | escape }}" hidden>Copy citation<span class="sr-only"> for {{ include.pub.title | escape }}</span></button><span class="copy-status" role="status" aria-live="polite"></span>
+      {% endif %}
+    </div>
   </div>
 </article>
