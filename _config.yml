@@ -35,6 +35,7 @@ exclude:
   - README.md
   - docs
   - scripts
+  - sites
   - vendor
   - node_modules
   - .bundle

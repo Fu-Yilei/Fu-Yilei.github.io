@@ -5,3 +5,6 @@ _site/
 vendor/
 node_modules/
 .DS_Store
+
+# Separate Sites checkout; not part of the GitHub Pages source.
+sites/
